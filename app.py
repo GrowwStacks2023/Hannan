@@ -28,10 +28,12 @@ def encode_request():
 
     # Log the incoming request IP
     logging.info(f"Incoming request from IP: {request_ip}")
+    logging.info(f"Allowed IPs: {allowed_ips}")
 
-    # Check if the IP is allowed
+    # Check if the IP is allowed (add debug logs)
     if request_ip not in allowed_ips:
         logging.warning(f"Unauthorized IP attempted to access: {request_ip}")
+        logging.warning(f"IP verification failed. Incoming IP: {request_ip} not in {allowed_ips}")
         return jsonify({'error': 'Unauthorized IP', 'ip': request_ip}), 403
 
     # Check if the request body is JSON and starts with `%{}`
