@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-WEBHOOK_URL = "https://webhook.site/f8d227a8-2d0f-4652-8187-ed64717165c4"  # Your webhook URL
+WEBHOOK_URL = "https://bold-sunset-627a.lively-sunset-1eef.workers.dev/"  # Your webhook URL
 
 def get_client_ip():
     # Check if the request is behind a proxy and use X-Forwarded-For header if available
